@@ -296,7 +296,7 @@
                         </div>
 						<div class="collapse" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#faqAccordion">
                             <div class="card-body">
-								<p>Anda dapat melihat mekanisme pendaftaran pelatihan melalui <a href="http://localhost/apricot/page/23-pendaftaran-pelatihan-pengembangan-kompetensi">LINK PENDAFTARAN PELATIHAN</a></p>
+								<p>Anda dapat melihat mekanisme pendaftaran pelatihan melalui <a href="<?php echo baseURL('page/23-pendaftaran-pelatihan-pengembangan-kompetensi'); ?>">LINK PENDAFTARAN PELATIHAN</a></p>
                             </div>
                         </div>
                     </div>

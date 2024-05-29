@@ -26,3 +26,23 @@ ERROR - 2024-05-29 04:15:11 --> 404 Page Not Found: Images/1x1.png
 ERROR - 2024-05-29 04:15:11 --> 404 Page Not Found: Images/1x1.png
 ERROR - 2024-05-29 04:16:39 --> 404 Page Not Found: Images/1x1.png
 ERROR - 2024-05-29 04:16:39 --> 404 Page Not Found: Images/1x1.png
+ERROR - 2024-05-29 05:03:15 --> 404 Page Not Found: Images/1x1.png
+ERROR - 2024-05-29 05:03:15 --> 404 Page Not Found: Images/1x1.png
+ERROR - 2024-05-29 05:04:12 --> 404 Page Not Found: Images/1x1.png
+ERROR - 2024-05-29 05:04:12 --> 404 Page Not Found: Images/1x1.png
+ERROR - 2024-05-29 05:39:35 --> 404 Page Not Found: Images/1x1.png
+ERROR - 2024-05-29 05:39:35 --> 404 Page Not Found: Images/1x1.png
+ERROR - 2024-05-29 06:05:09 --> 404 Page Not Found: Images/1x1.png
+ERROR - 2024-05-29 06:05:09 --> 404 Page Not Found: Images/1x1.png
+ERROR - 2024-05-29 09:51:44 --> Severity: error --> Exception: Call to undefined function base_url() C:\xampp\htdocs\apricot\application\views\bpsdm-unker\home.php 299
+ERROR - 2024-05-29 09:51:44 --> 404 Page Not Found: Images/1x1.png
+ERROR - 2024-05-29 09:52:06 --> 404 Page Not Found: Images/1x1.png
+ERROR - 2024-05-29 09:52:06 --> 404 Page Not Found: Images/1x1.png
+ERROR - 2024-05-29 09:52:37 --> 404 Page Not Found: Images/1x1.png
+ERROR - 2024-05-29 09:52:37 --> 404 Page Not Found: Images/1x1.png
+ERROR - 2024-05-29 09:54:41 --> 404 Page Not Found: Images/1x1.png
+ERROR - 2024-05-29 09:54:41 --> 404 Page Not Found: Images/1x1.png
+ERROR - 2024-05-29 10:12:20 --> 404 Page Not Found: Images/1x1.png
+ERROR - 2024-05-29 10:12:20 --> 404 Page Not Found: Images/1x1.png
+ERROR - 2024-05-29 10:12:24 --> 404 Page Not Found: Images/1x1.png
+ERROR - 2024-05-29 10:12:24 --> 404 Page Not Found: Images/1x1.png
