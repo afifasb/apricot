@@ -125,7 +125,7 @@ class Semua_artikel extends AN_Apricot{
         $this->komentar->tambah_komentar($id_artikel, $nama, $email, $isi_komentar);
 
         // redirect('semua_artikel/detail/$1' . $id_artikel);
-		redirect('http://localhost/apricot/');
+		redirect(baseURL());
 
     }
 
