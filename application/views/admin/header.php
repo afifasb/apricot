@@ -253,6 +253,23 @@ $levela=($user_level=='1')?"Super Admin":"Admin";
               </ul>
             </li>
 
+            <!-- Menu-item pertanyaan -->
+            <li class='treeview <?php if($npage==40){ echo'active';} ?>'>
+              <a href="#"><i class='fa fa-question-circle'></i><span>Pertanyaan</span><i class="fa fa-angle-left pull-right"></i></a>
+              <ul class='treeview-menu'>
+                <li class='<?php if($npage==40){ echo'active';} ?>'><a href="<?php echo $burl; ?>/all_pertanyaan"><i class='fa fa-circle-o'></i><span>Semua Pertanyaan</span></a></li>
+              </ul>
+            </li>
+
+            <li class='treeview <?php if($npage==41 || $npage==42){ echo'active';} ?>'>
+              <a href="#"><i class='fa fa fa-comment'></i><span>Komentar</span><i class="fa fa-angle-left pull-right"></i></a>
+              <ul class='treeview-menu'>
+                <li class='<?php if($npage==41){ echo'active';} ?>'><a href="<?php echo $burl; ?>/all_komentar"><i class='fa fa-circle-o'></i><span>Semua Komentar</span></a></li>
+                <li class='<?php if($npage==42){ echo'active';} ?>'><a href='<?php echo $burl; ?>/komentar'><i class='fa fa-circle-o'></i><span>Edit Komentar</span></a></li>
+              </ul>
+            </li>
+
+
             <li class='header'>Pengaturan</li>
 
            <?php if($user_level=='1'){    ?>

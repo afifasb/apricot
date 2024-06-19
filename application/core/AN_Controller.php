@@ -43,7 +43,7 @@ class AN_Apricot extends CI_Controller{
 		// $this->load->library(array("title","artikel","galeri","komentar","biodata_web","menu",'kategori','tag','newsticker','pihak_ketiga','pages','media_sosial','detail_kontak'));
 
 		$this->load->library(array(
-            "title","artikel","galeri","komentar","biodata_web",
+            "title","artikel","galeri","komentar", "pertanyaan", "biodata_web",
             "menu","kategori","tag","newsticker","pihak_ketiga",
             "pages","media_sosial","detail_kontak"
         ));

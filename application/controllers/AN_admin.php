@@ -1194,6 +1194,127 @@ class AN_admin extends CI_Controller {
 			
 	}
 
+	function pertanyaan($id=0) {
+		$id = abs($id);
+		if (!$this->session->userdata('login')) {
+			redirect("admin/login");
+		} else {
+			$this->load->model("admin/pertanyaan", "pertanyaan_data");
+	
+			if ($this->pertanyaan_data->get_pertanyaan($id)) {
+				$data = array(
+					'avatar' => $this->session->userdata('avatar_user'),
+					'path_avatar' => base_url() . "an-component/media/upload-user-avatar/" . $this->session->userdata('avatar_user'),
+					'title' => ($id == 0) ? "Pertanyaan Baru" : "Edit Pertanyaan",
+					'user' => $this->session->userdata('name_user'),
+					'user_level' => $this->session->userdata('level_user'),
+					'npage' => 16,
+					'burl' => base_url() . "admin",
+					'id_user' => $this->session->userdata('id_user'),
+					'data' => $this->pertanyaan_data->hasil,
+				);
+	
+				$this->load->view("admin/header", $data);
+				$this->load->view("admin/pertanyaan", $data);
+				$this->load->view("admin/footer", $data);
+			} else {
+				show_404();
+			}
+		}
+	}
+	
+	public function all_pertanyaan(){
+		if(!$this->login){
+			redirect("admin/login");
+		} else {
+			$this->load->model("admin/all_pertanyaan", "semua_pertanyaan");
+			$this->semua_pertanyaan->get_pertanyaan();
+	
+			$data = array(
+				'avatar' => $this->avatar_user,
+				'path_avatar' => base_url()."an-component/media/upload-user-avatar/".$this->avatar_user,
+				'title' => "Daftar Pertanyaan",
+				'user' => $this->name_user,
+				'user_level' => $this->level_user,
+				'npage' => 40,
+				'burl' => base_url()."admin",
+				'id_user' => $this->id_user,
+				'pertanyaan' => $this->semua_pertanyaan->hasil
+			);
+	
+			$this->load->view("admin/header", $data);
+			$this->load->view("admin/all_pertanyaan", $data);
+			$this->load->view("admin/footer", $data);
+		}
+	}
+
+	public function all_komentar(){
+		if(!$this->login){
+			redirect("admin/login");
+		} else {
+			$this->load->model("admin/all_komentar", "semua_komentar");
+			$this->semua_komentar->get_komentar();
+	
+			$data = array(
+				'avatar' => $this->avatar_user,
+				'path_avatar' => base_url()."an-component/media/upload-user-avatar/".$this->avatar_user,
+				'title' => "Daftar Komentar",
+				'user' => $this->name_user,
+				'user_level' => $this->level_user,
+				'npage' => 41,
+				'burl' => base_url()."admin",
+				'id_user' => $this->id_user,
+				'komentar' => $this->semua_komentar->hasil
+			);
+	
+			$this->load->view("admin/header", $data);
+			$this->load->view("admin/all_komentar", $data);
+			$this->load->view("admin/footer", $data);
+		}
+	}
+	
+	public function komentar($id=0){
+		if(!$this->login){
+			redirect("admin/login");
+		} else {
+	
+			$datas = array(
+				'id_komentar' => 0,
+				'id_artikel' => '',
+				'nama_komentar' => '',
+				'email' => '',
+				'isi_komentar' => '',
+				'tanggal_komentar' => ''
+			);
+	
+			$komentar = $this->db->get_where('komentar', array('id_komentar' => $id));
+			if($id > 0 && !($komentar->num_rows() > 0)){
+				show_404();
+				exit();
+			} 
+	
+			if($komentar->num_rows() > 0){
+				$datas = $komentar->row_array();
+			}
+	
+			$data = array(
+				'avatar' => $this->avatar_user,
+				'path_avatar' => base_url()."an-component/media/upload-user-avatar/".$this->avatar_user,
+				'title' => "Komentar Baru",
+				'user' => $this->name_user,
+				'user_level' => $this->level_user,
+				'npage' => 35,
+				'burl' => base_url()."admin",
+				'id_user' => $this->id_user,
+				'komentar' => $datas,
+			);
+	
+			$this->load->view("admin/header", $data);
+			$this->load->view("admin/komentar", $data);
+			$this->load->view("admin/footer", $data);
+		}       
+	}
+	
 
 	function group_banner(){
 

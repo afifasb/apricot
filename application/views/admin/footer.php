@@ -5126,6 +5126,61 @@ if($artikel_status==false){
                 }
               }
             });
+           
+           <?php
+           }  if($npage==42){
+           ?>
+            textEditor('#isi-komentar');
+
+            $('#submit-komentar').click(function(){
+              var _this=$(this);
+              if (!_this[0].memproses) {
+                var namaKomentar = $(".nama-komentar").val().trim();
+                var emailKomentar = $(".email-komentar").val().trim();
+                var isiKomentar = tinymce.get("isi-komentar").getContent();
+                var id = _this.attr('data-id');
+                
+                if (!namaKomentar.length) {
+                    error_alert('Nama Komentar', 'Masukkan nama komentar');
+                } else if (!emailKomentar.length) {
+                    error_alert('Email', 'Masukkan email');
+                } else if (!isiKomentar.length) {
+                    error_alert('Isi Komentar', 'Masukkan isi komentar');
+                } else {
+                    _this[0].memproses = true;
+                    show_proses('Memproses...');
+                    
+                    $.ajax({
+                        type: 'post',
+                        data: {
+                            id_komentar: id,
+                            nama_komentar: namaKomentar,
+                            email: emailKomentar,
+                            isi_komentar: isiKomentar
+                        },
+                        url: "<?php echo base_url('AN_ajax_admin/insert_komentar') ?>",
+                        dataType: "json",
+                        cache: false,
+                        success: function(data) {
+                            show_proses('Berhasil!');
+                            setTimeout(() => {
+                                window.location.href = "<?php echo base_url('admin/komentar') ?>/" + data.id;
+                                _this[0].memproses = false;
+                            }, 1500);
+                        },
+                        error: function(a) {
+                            console.log(a);
+                            error_alert('Gagal', 'Terjadi kesalahan. Harap coba lagi');
+                            hide_proses();
+                            _this[0].memproses = false;
+                        },
+                        complete: function() {
+                            // Add any additional complete actions if necessary
+                        }
+                    });
+                }
+              }            
+            });
 
 
            <?php

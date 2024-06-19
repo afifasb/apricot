@@ -2363,6 +2363,36 @@ class AN_ajax_admin extends CI_Controller
 
 	}
 
+	public function insert_komentar() {
+        $id_komentar = $this->input->post("id_komentar");
+        $nama_komentar = $this->input->post("nama_komentar");
+        $email = $this->input->post("email");
+        $isi_komentar = $this->input->post("isi_komentar");
+        $tanggal_komentar = date("Y-m-d H:i:s");
+
+        $data = array(
+            'nama_komentar' => $nama_komentar,
+            'email' => $email,
+            'isi_komentar' => $isi_komentar
+        );
+
+        if ($id_komentar > 0) {
+            // Update existing comment
+            $this->db->where(array('id_komentar' => $id_komentar))->update('komentar', $data);
+        } else {
+            // Insert new comment
+            $data['tanggal_komentar'] = $tanggal_komentar;
+            $this->db->insert('komentar', $data);
+            $id_komentar = $this->db->insert_id();
+        }
+
+        // Optionally, clear cache related to comments if necessary
+        @hapus_cache('semua_komentar');
+        @hapus_cache('komentar_' . $id_komentar);
+
+        echo json_encode(array('id' => $id_komentar));
+    }
+
 
 	function hapus_group_banner(){
 		$id= $this->input->post('id');

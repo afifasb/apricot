@@ -34,7 +34,15 @@ class Home extends AN_Apricot{
 
 	}
 
+	public function tambah_pertanyaan() {
+        $id_artikel = $this->input->post('id_artikel');
+        $nama = $this->input->post('nama');
+        $isi_pertanyaan = $this->input->post('isi_pertanyaan');
 
+        $this->pertanyaan->tambah_pertanyaan($nama, $isi_pertanyaan);
 
+        // redirect('semua_artikel/detail/$1' . $id_artikel);
+		redirect(baseURL());
 
+    }
 }

@@ -316,3 +316,29 @@
     </div>
 </div><!-- /FAQ -->
 
+<!-- Form Tambah Komentar -->
+<div class="question_area section_padding_130" id="question">
+    <div class="container"> 
+		<h3 class="center">Pertanyaan</h3>
+        <div class="row justify-content-center">
+			<div class="col-12 col-sm-10 col-lg-8">
+			<form action="<?php echo baseURL('home/tambah_pertanyaan'); ?>" method="post">
+				<input type="hidden" name="id_artikel" value="<?php echo $artikel['id']; ?>">
+					<div class="form-group">
+						<label for="nama">Nama:</label>
+						<input type="text" id="nama" name="nama" class="form-control" required>
+					</div>
+					<div class="form-group">
+						<label for="isi_pertanyaan">Pertanyaan:</label>
+						<textarea id="isi_pertanyaan" name="isi_pertanyaan" class="form-control" required></textarea>
+					</div>
+			<button type="submit" class="btn btn-primary">Tambahkan Pertanyaan</button>
+			</form>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
