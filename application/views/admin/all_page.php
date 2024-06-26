@@ -2,7 +2,6 @@
 if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
 
 ?>
-
      <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper" >
         <!-- Content Header (Page header) -->

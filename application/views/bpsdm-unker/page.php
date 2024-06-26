@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <!-- RIGHT -->
             <div class="col-md-3 col-sm-3 dark">
                 <!-- side navigation -->
-                <div class="side-nav margin-bottom-60 margin-top-30">
+                <!-- <div class="side-nav margin-bottom-60 margin-top-30">
                     <div class="side-nav-head">
                         <button class="fa fa-bars"></button>
                         <h4>KATEGORI</h4>
@@ -62,8 +62,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <li class="list-group-item"><a href="<?php echo kategori_url($kategori['id'],$kategori['slug']); ?>"><span class="size-11 text-muted pull-right"></span> <?php echo $kategori['nama']; ?></a></li>
                     <?php } ?>
                     </ul>
-                    <!-- /side navigation -->
-                </div>
+                     /side navigation 
+                </div> -->
 
 
                 <!-- JUSTIFIED TAB -->
@@ -135,7 +135,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <!-- JUSTIFIED TAB -->
 
 
-                <!-- TAGS -->
+                <!-- TAGS 
                 <h3 class="hidden-xs size-16 margin-bottom-20">TAGS</h3>
                 <div class="hidden-xs margin-bottom-60">
                     <?php
@@ -147,6 +147,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <?php } ?>
 
                 </div>
+                -->
 
 
             </div>

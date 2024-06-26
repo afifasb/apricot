@@ -1,23 +1,15 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-
-
 	<div class='col-md-12' id="header-page">
 			<h1><span><?php echo $heading; ?></span></h1>
 	</div>
-
-
-
 
 <div class='col-md-8 left-side'>
 
 <?php foreach ($semua_artikel as $key => $artikel) {
 
 echo "<div class='artikel'>";
-
-
-
 
 echo "<img  class='img-responsive' src='".img_artikel_url($artikel['foto'])."' alt='$artikel[judul]' />";
 

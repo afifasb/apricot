@@ -5,14 +5,11 @@ class Artikel
 {
 
 	protected $CI;
-
 	public function __construct(){
 
 		$this->CI=& get_instance();
 
 	}
-
-
 	public function artikel_populer($max=7){
 
 		$cache_artikel_populer=$this->CI->cache->file->get('artikel_populer');
